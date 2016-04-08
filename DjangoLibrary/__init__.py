@@ -137,7 +137,7 @@ user.save()""" % {
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE
         )
-        django.communicate(to_run)
+        django.communicate(to_run.encode('utf-8'))
 
     def create_superuser(self, username, email, password):
         """Create a Django superuser in the default auth model."""
